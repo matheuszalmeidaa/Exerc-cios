@@ -1,0 +1,39 @@
+import random
+import time
+
+def criar_senha ():
+  numero_1 = random.randint(0,9)
+  numero_2 = random.randint(0,9)
+  numero_3 = random.randint(0,9)
+  numero_4 = random.randint(0,9)
+  return numero_1, numero_2, numero_3, numero_4
+
+numero_1, numero_2, numero_3, numero_4 = criar_senha()
+
+print('Seja bem vindo ao gerador de senhas')
+nome_cliente = input('Qual seu nome? ')
+print(nome_cliente,'vamos gerar sua nova senha')
+
+#Mensagens de analise
+time.sleep(2)
+print('carregando...')
+time.sleep(5)
+print('Gerando nova senha')
+time.sleep(3)
+print('Segue abaixo sua senha')
+print(numero_1, numero_2, numero_3, numero_4)
+time.sleep(5)
+print()
+print('Deseja obter outra senha?')
+senha_nova=int(input('digite 1 para sim e 0 não: '))
+
+if senha_nova == 1 :
+  print('Vamos executar esta função')
+  print('Carregando...')
+  time.sleep(3)
+  print('Segue abaixo a nova senha')
+  numero_1, numero_2, numero_3, numero_4 = criar_senha()
+  print(numero_1, numero_2, numero_3, numero_4)
+
+elif senha_nova == 0 :
+  print('Obrigado',nome_cliente,', está é sua nova senha')
