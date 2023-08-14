@@ -1,0 +1,70 @@
+import random
+import time
+
+def lista_numeros ():
+  numero_1 = random.randint(0,100)
+  numero_2 = random.randint(0,100)
+  numero_3 = random.randint(0,100)
+  numero_4 = random.randint(0,100)
+  return numero_1, numero_2, numero_3, numero_4
+
+numero_1, numero_2, numero_3, numero_4 = lista_numeros()
+
+
+print('Deseja escolher os números ou que o programa sorteie?')
+
+pergunta = len(input('digite escolher ou sorteio: '))
+
+if pergunta == 8 :
+  numero_1 = int(input('Escolha o primeiro número: '))
+  numero_2 = int(input('Escolha o segundo número: '))
+  numero_3 = int(input('Escolha o terceiro número: '))
+  numero_4 = int(input('Escolha o quarto número: '))
+
+if pergunta == 7 :
+  lista_numeros()
+  print()
+  print('Carregando...')
+  print()
+  time.sleep(5)
+	
+#SOMENTE PARA MOSTRAR OS NUMEROS SORTEADOS PARA VERIFICAÇÃO DO SISTEMA
+  print('Segue abaixo os números sorteados:')
+  print('Número 1:',numero_1)
+  print('Número 2:',numero_2)
+  print('Número 3:',numero_3)
+  print('Número 4:',numero_4)
+
+  print('Carregando...')
+  time.sleep(3)
+  print()
+  print('Realizando aferição do maior número ...')
+  time.sleep(3)
+#SEÇÃO PARA VERIFICAÇÃO DE QUAL NUMERO É MAIOR 
+if numero_1 > numero_2 :
+  if numero_1 > numero_3 :
+    if numero_1 > numero_4 :
+      print()
+      print('-- Resultado --')
+      print('O numero 1 é o maior numero, sendo ele',numero_1)
+
+if numero_2 > numero_1 :
+  if numero_2 > numero_3 :
+    if numero_2 > numero_4 :
+      print()
+      print('-- Resultado --')
+      print('O numero 2 é o maior numero, sendo ele', numero_2)
+
+if numero_3 > numero_1 :
+  if numero_3 > numero_2 :
+    if numero_3 > numero_4 :
+      print()
+      print('-- Resultado --')
+      print('O numero 3 é o maior numero, sendo ele', numero_3)
+
+    if numero_4 > numero_1 :
+      if numero_4 > numero_2 :
+        if numero_4 > numero_3 :
+         print()
+         print('-- Resultado --')
+         print('O numero 4 é o maior numero, sendo ele',numero_4)
