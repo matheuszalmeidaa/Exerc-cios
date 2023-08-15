@@ -1,0 +1,75 @@
+import time 
+
+
+print('--- Calculadora ---')
+print()
+def escolha_numero ():
+  primeiro_numero=int(input('Digite um número: '))
+  segundo_numero=int(input('Digite outro número: '))
+  return primeiro_numero, segundo_numero
+primeiro_numero, segundo_numero = escolha_numero()
+
+print()
+print('Carregando...')
+print()
+time.sleep(3)
+
+
+#confirmação do numero 
+print('Os números selecionados foram',primeiro_numero,'e',segundo_numero)
+print('Deseja alterar algum número? ')
+time.sleep(3)
+
+alteração_numero = len(input('Digite alterar ou continuar: ')) 
+
+print()
+print('Carregando...')
+time.sleep(3)
+if alteração_numero == 7:
+  escolha_numero()
+
+elif alteração_numero == 9:
+  print('Ok, passaremos a próxima seção')
+
+
+print()
+time.sleep(5)
+#escolha da operação
+
+
+print('Digite a operação desejada: ')
+operação = len(input('Adição, Subtração, Multiplicação e Divisão: '))
+
+if operação == 6 :
+  adição = primeiro_numero + segundo_numero
+  print('O resultado desta operação:',primeiro_numero,'+',segundo_numero,'=',adição)
+
+elif operação == 9 :
+  subtração = primeiro_numero - segundo_numero
+  print('O resultado desta operação:',primeiro_numero,'-',segundo_numero,'=',subtração)
+
+elif operação == 13 :
+  multiplicação = primeiro_numero * segundo_numero
+  print('O resultado desta operação:',primeiro_numero,'X',segundo_numero,'=',multiplicação)
+
+elif operação == 7:
+  if segundo_numero != 0:
+        divisão = primeiro_numero / segundo_numero
+        print('O resultado desta operação:',primeiro_numero, '/', segundo_numero, '=', '{:.0f}'.format(divisão))
+  else:
+        print()
+        print("Não é possível dividir por zero.")
+
+print()
+print('Deseja realizar outra operação? ')
+time.sleep(2)
+pergunta = len(input('sim ou encerrar: '))
+
+if pergunta == 3:
+  print('Carregando...')
+  time.sleep(2)
+  print()
+  escolha_numero()
+
+if pergunta == 8:
+  print('Calculadora encerrada')
