@@ -1,0 +1,46 @@
+import random
+
+numero_simulador = random.randint(0, 100)
+print(numero_simulador)
+
+def jogador():
+    tentativa_jogador = int(input('Tente um número: '))
+    return tentativa_jogador
+
+definir_tentativas = int(input('Qual a quantidade de tentativas você quer? '))
+
+#---------- LOOP DE TENTATIVAS ----------#
+for _ in range(definir_tentativas):
+    tentativa_jogador = jogador()
+
+    if tentativa_jogador == numero_simulador:
+        print('Você Acertou !!')
+        break
+
+    elif _ == definir_tentativas - 1:
+      print(f'Fim das tentativas. O número sorteado era',numero_simulador)
+      break
+
+    diferença_numero = abs(numero_simulador - tentativa_jogador)
+
+    #---------- D I F E R E N Ç A ----------#
+
+    if diferença_numero >= 40:
+      if diferença_numero <= 50:
+        print('Muito longe')
+
+    elif diferença_numero >= 30:
+      if diferença_numero <=39:
+        print('Longe')
+
+    elif diferença_numero >= 20:
+      if diferença_numero <=29:
+        print('Próximo')
+
+    elif diferença_numero >= 10:
+      if diferença_numero <=19:
+        print('Pertinho')
+
+    elif diferença_numero >= 1:
+      if diferença_numero <=9:
+        print('Raspando')
