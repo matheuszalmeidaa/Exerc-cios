@@ -1,0 +1,67 @@
+import random
+import time
+
+print('Analisador de Números')
+
+print()
+print()
+
+print('Sorteando uma lista de números')
+print('Carregando...')
+time.sleep(2)
+
+
+def numeros_sorteados () :
+  primeiro_numero = random.randint(1,100)
+  segundo_numero = random.randint(1,100)
+  terceiro_numero = random.randint(1,100)
+  return primeiro_numero, segundo_numero, terceiro_numero
+
+primeiro_numero, segundo_numero, terceiro_numero = numeros_sorteados() 
+
+print('Segue abaixo a lista sorteada! ')
+print(primeiro_numero,segundo_numero,terceiro_numero)
+print()
+
+
+#Média
+print('Carregando dados aplicados destes números...')
+time.sleep(3)
+media= (primeiro_numero + segundo_numero + terceiro_numero)/3
+print()
+print('A média seguinte é {:.0f}'.format(media))
+
+
+#soma
+time.sleep(3)
+print('A soma dos 3 números é',primeiro_numero+segundo_numero+terceiro_numero)
+
+time.sleep(3)
+
+#maior valor
+if primeiro_numero >= segundo_numero:
+  if primeiro_numero >= terceiro_numero:
+    print('O primeiro número é o maior sendo ele o seguinte número',primeiro_numero) 
+
+elif segundo_numero >= terceiro_numero:
+  if segundo_numero >= primeiro_numero:
+    print('O segundo número é o maior sendo ele o seguinte número',segundo_numero) 
+
+elif terceiro_numero >= primeiro_numero:
+  if terceiro_numero >= segundo_numero:
+    print('O terceiro número é o maior sendo ele o seguinte número',terceiro_numero) 
+
+time.sleep(3)
+
+#menor valor
+if primeiro_numero <= segundo_numero:
+  if primeiro_numero <= terceiro_numero:
+    print('O primeiro número é o menor sendo ele o seguinte número',primeiro_numero) 
+
+elif segundo_numero <= terceiro_numero:
+  if segundo_numero <= primeiro_numero:
+    print('O segundo número é o menor sendo ele o seguinte número',segundo_numero) 
+
+elif terceiro_numero <= primeiro_numero:
+  if terceiro_numero <= segundo_numero:
+    print('O terceiro número é o menor sendo ele o seguinte número',terceiro_numero) 
