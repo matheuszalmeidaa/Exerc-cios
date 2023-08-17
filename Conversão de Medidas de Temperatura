@@ -1,0 +1,54 @@
+import time
+
+print('Conversão de Medidas de Temperatura')
+print()
+
+def medida():
+  print('Em que unidade de medida está a sua temperatura?')
+  time.sleep(2)
+  selecao_medida=len(input('Celsius, Kelvin ou Fahrenheit? '))
+  return selecao_medida
+selecao_medida = medida()
+
+#Medida de temperatura Celsius
+if selecao_medida == 7:
+  temperatura_celsius=float(input('Digite a temperatura em graus Celsius "°C": '))
+  time.sleep(5)
+  print('Qual será a medida para conversão ?')
+  escolha_celsius=len(input('De Celsius para Kelvin ou Fahrenheit: ')) 
+
+  if escolha_celsius == 6 :
+      print('A temperatura será de',temperatura_celsius+273,'°K')  #celsius para kelvin
+  elif escolha_celsius == 10 :
+    print('A temperatura será de',(1.8*temperatura_celsius)+32,'°F') #celsius para fahrenheit
+
+
+#Medida de temperatura Kelvin
+if selecao_medida == 6 :
+  temperatura_kelvin=float(input('Digite a temperatura em Kelvin "°K": '))
+  time.sleep(5)
+  print('Qual será a medida para conversão ?')
+  escolha_kelvin=len(input('De Kelvin para Fahrenheit ou Celsius: ')) 
+
+  if escolha_kelvin == 10:
+    print('A temperatura será de',(temperatura_kelvin-273)*1.8+32,'°F')  #kelvin para Fahrenheit 
+
+  if escolha_kelvin == 7:
+    print('A temperatura será de',temperatura_kelvin-273,'°C')  #kelvin para celsius 
+
+
+#Medida de temperatura Fahrenheit
+if selecao_medida == 10 :
+  temperatura_fahrenheit=float(input('Digite a temperatura em Fahrenheit "°F": '))
+  time.sleep(5)
+  print('Qual será a medida para conversão ?')
+  escolha_fahrenheit=len(input('De Fahrenheit para Celsius ou Kelvin: ')) 
+
+  if escolha_fahrenheit == 7:
+    print('A temperatura será de',(temperatura_fahrenheit-32)/1.8,'°C')  #Fahrenheit para celsius 
+
+  if escolha_fahrenheit == 6:
+    soma_fahrenheit_kelvin = temperatura_fahrenheit+459.67
+    print(soma_fahrenheit_kelvin)
+    final_fahrenheit_kelvin = (soma_fahrenheit_kelvin / 9)*5
+    print('A temperatura será de {:.2f}°K'.format(final_fahrenheit_kelvin)) #Fahrenheit para kelvin 
