@@ -1,0 +1,95 @@
+import time
+
+print('digite as frutas as quais você escolheu nesta compra')
+time.sleep(2)
+print('Morango, Maçã ou Morango e Maçã')
+
+pergunta_compra = len(input('A compra desejada foi?: '))
+
+print()
+
+#Somente Morango
+if pergunta_compra == 7:
+    print('Quantos Kg''s de Morango foi selecionado? Digite abaixo')
+    kg_morango = float(input('Kg: '))
+    print('Carregando...')
+    time.sleep(3)
+    print()
+
+    if kg_morango <= 5 :
+      print('O valor do morango será R${:.2f}'.format(2.5*kg_morango))
+
+    if kg_morango > 5 :
+        if kg_morango < 8 :
+            print('O valor do morango será R${:.2f}'.format(2.2*kg_morango))
+
+        calculo_morango = kg_morango*2.2
+        if kg_morango >= 8 or calculo_morango >= 25:
+            calculo_desconto_morango = ((calculo_morango)*90)/100
+            print('O valor do morango será R${:.2f},por conta do desconto'.format(calculo_desconto_morango))
+
+
+#Somente Maçã
+if pergunta_compra == 4:
+    print('Quantos Kg''s de Maçã foi selecionado? Digite abaixo')
+    kg_maçã = float(input('Kg: '))
+    print('Carregando...')
+    time.sleep(3)
+    print()
+    if kg_maçã <= 5 :
+      print('O valor do morango será R${:.2f}'.format(1.8*kg_maçã))
+
+    if kg_maçã > 5 :
+        if kg_maçã < 8 :
+            print('O valor do morango será R${:.2f}'.format(1.5*kg_maçã))
+
+        calculo_maçã = kg_maçã*1.5
+        if kg_maçã >= 8 or calculo_maçã >= 25:
+            calculo_desconto_maçã = ((calculo_maçã)*90)/100
+            print('O valor do maçã será R${:.2f},por conta do desconto'.format(calculo_desconto_maçã))
+
+
+
+
+#Morango e Maçã
+if pergunta_compra == 14:
+    print('Quantos Kg''s de Morango foi selecionado? Digite abaixo')
+    kg_morango = float(input('Kg: '))
+    print('Quantos Kg''s de Maçã foi selecionado? Digite abaixo')
+    kg_maçã = float(input('Kg: '))
+    print('Carregando...')
+    time.sleep(3)
+    print()
+
+    if kg_morango <= 5 :
+        formula_morango_menor5= 2.5 * kg_morango
+
+    if kg_morango > 5:
+        if kg_morango < 8:
+          formula_morango_maior5 =2.2 * kg_morango
+
+
+    if kg_maçã <= 5:
+        formula_maçã_menor5 = 1.8 * kg_maçã
+
+    if kg_maçã > 5:
+        if kg_maçã < 8:
+          formula_maçã_maior5 = 1.5 * kg_maçã
+
+
+    quantidade_kilo = kg_morango+kg_maçã
+    somaRS = formula_morango_menor5 or formula_morango_maior5 + formula_maçã_menor5 or formula_maçã_maior5
+    if quantidade_kilo >= 8 or somaRS >= 25:
+      calculo_desconto = ((somaRS) * 90) / 100
+      calculo_diferença = somaRS- calculo_desconto
+
+
+      print( 'O valor do morango será R${:.2f}'.format(formula_morango_menor5 or formula_morango_maior5))
+      print( 'O valor do maçã será R${:.2f}'.format(formula_maçã_menor5 or formula_maçã_maior5))
+      print()
+      print('O valor total seria de R${:.2f}'.format(formula_morango_menor5 or formula_morango_maior5 + formula_maçã_menor5 or formula_maçã_maior5))
+      print('Porém com este desconto sendo ele de quantidade ou valor, você economizou',calculo_diferença)
+
+    if quantidade_kilo < 8 or somaRS < 25:
+      calculo_sem_desconto = formula_morango_menor5 or formula_morango_maior5 + formula_maçã_menor5 or formula_maçã_maior5
+      print('O valor total será de R${:.2f'.format(calculo_sem_desconto))
