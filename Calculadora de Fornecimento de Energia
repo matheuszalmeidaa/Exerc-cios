@@ -1,0 +1,65 @@
+import time 
+
+def dados():
+    quantidade_consumida = float(input('Digite a quantia consumida de kWh: '))
+    tipo_instalação = len(input('Digite o tipo de instalação: '))
+    return quantidade_consumida, tipo_instalação
+
+quantidade_consumida, tipo_instalação = dados()
+
+print()
+print('Carregando...')
+time.sleep(3)
+print()
+
+
+#        residencial
+
+if tipo_instalação == 11 :
+    if quantidade_consumida <= 500 :
+      print(f'Nesta quantidade consumida sendo ela',quantidade_consumida,'kWh, considerando sua instalação residencial \n valor final será de R${:.2f}'.format(quantidade_consumida*0.4))
+
+    if quantidade_consumida >= 501 :
+      print(f'Nesta quantidade consumida sendo ela',quantidade_consumida,'kWh, considerando sua instalação residencial \n valor final será de R${:.2f}'.format(quantidade_consumida*0.65))
+
+
+#       comercial
+
+if tipo_instalação == 9 :
+    if quantidade_consumida <= 1000:
+      print(f'Nesta quantidade consumida sendo ela',quantidade_consumida,'kWh, considerando sua instalação comercial \n valor final será de R${:.2f}'.format(quantidade_consumida * 0.55))
+
+    if quantidade_consumida >= 1001:
+      print(f'Nesta quantidade consumida sendo ela',quantidade_consumida,'kWh, considerando sua instalação comercial \n valor final será de R${:.2f}'.format(quantidade_consumida * 0.60))
+
+
+#       industrial
+
+if tipo_instalação == 10 :
+    if quantidade_consumida <= 5000:
+      print(f'Nesta quantidade consumida sendo ela',quantidade_consumida,'kWh, considerando sua instalação industrial \n valor final será de R${:.2f}'.format(quantidade_consumida * 0.55))
+
+    if quantidade_consumida >= 5001:
+      print(f'Nesta quantidade consumida sendo ela',quantidade_consumida,'kWh, considerando sua instalação industrial \n valor final será de R${:.2f}'.format(quantidade_consumida * 0.40))
+
+time.sleep(3)
+
+while True :
+  print()
+  print()
+  print('Deseja encerrar a calculadora ou fazer novamente')
+  time.sleep(2)
+  pergunta_final = len(input('Digite encerrar ou novamente:'))
+  if pergunta_final == 8 :
+      print('Encerrando Progama...')
+      time.sleep(1)
+      print()
+      print('Programa encerrado')
+      break
+
+  if pergunta_final == 9 :
+      print()
+      print('Carregando Calculadora..')
+      time.sleep(2)
+      print()
+      dados()
