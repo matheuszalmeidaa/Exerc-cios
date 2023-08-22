@@ -27,6 +27,7 @@ if pergunta == 7 :
   print('Carregando...')
   print()
   time.sleep(5)
+
 	
 #SOMENTE PARA MOSTRAR OS NUMEROS SORTEADOS PARA VERIFICAÇÃO DO SISTEMA
   print('Segue abaixo os números sorteados:')
@@ -36,35 +37,30 @@ if pergunta == 7 :
   print('Número 4:',numero_4)
 
   print('Carregando...')
+  print()
   time.sleep(3)
   print()
   print('Realizando aferição do maior número ...')
   time.sleep(3)
+
+
 #SEÇÃO PARA VERIFICAÇÃO DE QUAL NUMERO É MAIOR 
-if numero_1 > numero_2 :
-  if numero_1 > numero_3 :
-    if numero_1 > numero_4 :
-      print()
-      print('-- Resultado --')
-      print('O numero 1 é o maior numero, sendo ele',numero_1)
+if numero_1 > numero_2 and numero_1 > numero_3 and numero_1 > numero_4 : 
+  print()
+  print('-- Resultado --')
+  print('O numero 1 é o maior numero, sendo ele',numero_1)
 
-if numero_2 > numero_1 :
-  if numero_2 > numero_3 :
-    if numero_2 > numero_4 :
-      print()
-      print('-- Resultado --')
-      print('O numero 2 é o maior numero, sendo ele', numero_2)
+if numero_2 > numero_1 and numero_2 > numero_3 and numero_2 > numero_4 :
+  print()
+  print('-- Resultado --')
+  print('O numero 2 é o maior numero, sendo ele', numero_2)
 
-if numero_3 > numero_1 :
-  if numero_3 > numero_2 :
-    if numero_3 > numero_4 :
-      print()
-      print('-- Resultado --')
-      print('O numero 3 é o maior numero, sendo ele', numero_3)
+if numero_3 > numero_1 and numero_3 > numero_2 and numero_3 > numero_4 :
+  print()
+  print('-- Resultado --')
+  print('O numero 3 é o maior numero, sendo ele', numero_3)
 
-    if numero_4 > numero_1 :
-      if numero_4 > numero_2 :
-        if numero_4 > numero_3 :
-         print()
-         print('-- Resultado --')
-         print('O numero 4 é o maior numero, sendo ele',numero_4)
+if numero_4 > numero_1 and numero_4 > numero_2 and numero_4 > numero_3 :
+  print()
+  print('-- Resultado --')
+  print('O numero 4 é o maior numero, sendo ele',numero_4)
