@@ -1,0 +1,13 @@
+numero_um = float(input('Digite o valor do primeiro lado: '))
+numero_dois = float(input('Digite o valor do segundo lado: '))
+numero_tres = float(input('Digite o valor do terceiro lado: '))
+
+if numero_um == numero_dois and numero_dois == numero_tres:
+    print('Triângulo Equilátero')
+
+if numero_um == numero_dois or numero_dois == numero_tres or numero_um == numero_tres:
+    if numero_um != numero_tres or numero_dois != numero_um or numero_um != numero_dois:
+        print('Triângulo Isóscele')
+
+if numero_um != numero_dois and numero_dois != numero_tres and numero_tres != numero_um:
+  print('Triângulo Escaleno')
