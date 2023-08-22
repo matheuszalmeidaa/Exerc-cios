@@ -1,0 +1,27 @@
+# Criando listas vazias para produtos e valores
+lista_produto = []
+lista_valores = []
+
+# Loop para adicionar produtos e valores às listas
+while True:
+    produto = input("Digite o nome do produto ou 'sair' para encerrar: ")
+    if produto.lower() == "sair":
+        break
+
+    valor = float(input(f'Digite o valor do {produto}: '))
+
+    lista_produto.append(produto)
+    lista_valores.append(valor)
+
+# Calculando o valor total gasto na compra
+soma_das_notas = sum(lista_valores)
+print('O valor total gasto na compra é de R${:.2f}'.format(soma_das_notas))
+
+# Contando quantos produtos custam mais de R$1000
+produtos_caros = sum(1 for valor in lista_valores if valor > 1000)
+print('Quantidade de produtos que custam mais de R$1000:', produtos_caros)
+
+# Encontrando o produto mais barato
+indice_produto_mais_barato = lista_valores.index(min(lista_valores))
+produto_mais_barato = lista_produto[indice_produto_mais_barato]
+print('O produto mais barato é:', produto_mais_barato)
