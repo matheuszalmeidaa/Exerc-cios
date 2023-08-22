@@ -1,0 +1,11 @@
+def radar():
+  velocidade_carro = int(input('Digite a velocidade atingida: '))
+  return velocidade_carro
+velocidade_carro = radar()
+
+if velocidade_carro > 80 :
+  valor_multa = (velocidade_carro-80)*7
+  print('Você foi multado por estar acima da velocidade, o valor referente a multa será de R${:.2f}'.format(valor_multa))
+
+else :
+  print('Velocidade dentro dos padrões da via')
