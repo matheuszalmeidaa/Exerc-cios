@@ -1,0 +1,49 @@
+import time
+
+print('#  Investigação do crime de Ana   #')
+print()
+
+print('Segue abaixo as perguntas para investigação!')
+time.sleep(2)
+print('Digite sim ou nunca como resposta')
+time.sleep(1)
+print()
+
+def perguntas():
+  pergunta_1=len(input('Telefonou para a vítima? '))
+  pergunta_2=len(input('Esteve no local do crime? '))
+  pergunta_3=len(input('Mora perto da vítima? '))
+  pergunta_4=len(input('Devia para a vítima? '))
+  pergunta_5=len(input('Já trabalhou com a vítima? '))
+  return pergunta_1, pergunta_2, pergunta_3, pergunta_4, pergunta_5
+
+pergunta_1, pergunta_2, pergunta_3, pergunta_4, pergunta_5 = perguntas()
+
+
+print()
+print('Carrregando dados...')
+time.sleep(3)
+print()
+
+soma_pergunta = pergunta_1+pergunta_2+pergunta_3+pergunta_4+pergunta_5
+
+if soma_pergunta == 21:
+  print('Você é considerada Suspeito')
+
+elif soma_pergunta >= 17 and soma_pergunta <= 19 :
+    print('Você é considerada um Cúmplice')
+
+elif soma_pergunta == 15 :
+  print('Você é considerado o Assasino neste caso')
+
+elif soma_pergunta == 25 :
+  print('Você foi considerado como Inocente')
+
+else :
+  print('Algum erro nas respostas aconteceram, vamos resetar o sistema!')
+  print()
+  print('Carregando...')
+  time.sleep(4)
+  print()
+  print('Responda novamente e corretamente, seguindo assim este padrão de resposta \n sendo ela sim ou nunca')
+  perguntas()
