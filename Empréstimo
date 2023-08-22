@@ -1,0 +1,16 @@
+def emprestimo():
+    valor_casa = float(input('Digite o valor da casa: '))
+    salario_comprador = float(input('Digite seu salário: '))
+    anos_pagamento = int(input('Quantidade de anos para pagamento: '))
+    return valor_casa, salario_comprador, anos_pagamento
+
+valor_casa, salario_comprador, anos_pagamento = emprestimo()
+
+mensal = anos_pagamento * 12
+prestacao = valor_casa / mensal
+prestacao_maxima = (salario_comprador * 0.3)
+
+if prestacao <= prestacao_maxima:
+    print('Empréstimo aprovado. Valor da prestação: R${:.2f}'.format(prestacao))
+else:
+    print('Empréstimo negado. Valor da prestação excede 30% do salário.')
