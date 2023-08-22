@@ -1,0 +1,21 @@
+ano_nascimento = int(input('Digite o ano em que você nasceu: '))
+ano = 2023
+
+verificação_idade = ano - ano_nascimento 
+
+if verificação_idade == 18:
+  print('Hora de se Alistar')
+
+elif verificação_idade < 18 :
+  menor = 18-verificação_idade
+  if menor >= 2 :
+    print('Falta somente',menor,'anos')
+  else :
+    print('Falta somente',menor,'ano')
+
+else :
+  maior = verificação_idade - 18
+  if maior >= 2 :
+    print('já passou do tempo do alistamento, se passaram o total de',maior,'anos')
+  else :
+    print('já passou do tempo do alistamento, se passaram o total de',maior,'ano')
