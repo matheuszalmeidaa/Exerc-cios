@@ -1,0 +1,52 @@
+import time
+# Lista de Tarefas
+
+lista_tarefa = []
+prioridade= []
+
+print('Bem vindo a lista de tarefas')
+time.sleep(3)
+print('Aqui você poderá adicionar, remover e listar as tarefas!')
+time.sleep(2.5)
+print()
+
+
+def adicionar_tarefa ():
+
+  i=0
+  while True:
+      i+=1
+  #     time.sleep(1)
+      adicionar = input('Digite o nome da %d° tarefa ou digite sair para finalizar : '%i)
+      if adicionar.lower() =='SAIR' or adicionar =='Sair' or adicionar =='sair' :
+          break
+      lista_tarefa.append(adicionar)
+adicionar_tarefa()
+print()
+print('Carregando...')
+print()
+time.sleep(2)
+print('Abaixo estão todas as tarefas listadas')
+print(lista_tarefa)
+time.sleep(2)
+print()
+print('Deseja exlcuir alguma tarefa?')
+time.sleep(1)
+pergunta_remover = int(input('Digite 1 para sim e 2 para não: '))
+
+if pergunta_remover == 1 :
+  print()
+  print('Qual tarefa deseja excluir? ')
+  print(lista_tarefa)
+  time.sleep(1)
+  escolha_tarefa_excluir = input('Digite o nome conforme cadastrado: ') 
+  lista_tarefa.remove(escolha_tarefa_excluir)
+  print('Carregando...')
+  print('Tarefa removida com sucesso, segue abaixo a nova lista')
+  time.sleep(1.5)
+  print(lista_tarefa)
+
+if pergunta_remover == 2 :
+  print()
+  print('Segue abaixo a lista de tarefas: ')
+  print(lista_tarefa)
