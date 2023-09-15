@@ -1,0 +1,23 @@
+def calcular_notas(valor_saque):
+    if valor_saque < 10 or valor_saque > 600:
+        print('Erro: Digite um valor acima de 10 e limitado até R$600')
+        return
+
+    notas_de_100 = valor_saque // 100
+    valor_saque %= 100
+
+    notas_de_50 = valor_saque // 50
+    valor_saque %= 50
+
+    notas_de_5 = valor_saque // 5
+    valor_saque %= 5
+
+    notas_de_1 = valor_saque
+
+    print(f"Notas de R$100: {notas_de_100}")
+    print(f"Notas de R$50: {notas_de_50}")
+    print(f"Notas de R$5: {notas_de_5}")
+    print(f"Notas de R$1: {notas_de_1}")
+
+valor_saque = int(input('Digite o valor requerido: '))
+calcular_notas(valor_saque)
