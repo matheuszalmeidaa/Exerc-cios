@@ -1,0 +1,86 @@
+import time
+
+aluno = []
+nota_final = []
+
+
+while True :
+  nome_aluno = input('Nome do aluno? ')
+  aluno.append(nome_aluno)
+  time.sleep(1)
+  if nome_aluno == '' :
+    print('Erro: Reinicie o programa e digite um nome válido')
+    break
+
+  nota_aluno_correção = 0
+  quantidade = 0
+  while True :
+    quantidade+= 1
+    pergunta_prova = str(input('Qual a alternativa respondida na primeira %d questão? ' %quantidade))
+    time.sleep(1)
+
+    if pergunta_prova == "" :
+      quantidade -= 1
+      time.sleep(1)
+      print('Digite uma alternativa Válida ou não Vazia')
+    if pergunta_prova not in ('a', 'b', 'c', 'd'):
+      time.sleep(1)
+      print('Digite uma alternativa válida (a, b, c, ou d)')
+      quantidade -= 1
+
+
+    if quantidade == 1 and pergunta_prova == 'a':
+      nota_aluno_correção += 1
+
+    if quantidade == 2 and pergunta_prova == 'b' :
+      nota_aluno_correção += 1
+
+    if quantidade == 3 and pergunta_prova == 'c' :
+      nota_aluno_correção += 1
+    
+    if quantidade == 4 and pergunta_prova == 'd' :
+      nota_aluno_correção += 1
+    
+    if quantidade == 5 and pergunta_prova == 'e':
+      nota_aluno_correção += 1
+
+    if quantidade == 6 and pergunta_prova == 'e' :
+      nota_aluno_correção += 1
+
+    if quantidade == 7 and pergunta_prova == 'd' :
+      nota_aluno_correção += 1
+
+    if quantidade == 8 and pergunta_prova == 'c' :
+      nota_aluno_correção += 1
+
+    if quantidade == 9 and pergunta_prova == 'b':
+      nota_aluno_correção += 1
+
+    if quantidade == 10 and pergunta_prova == 'a' :
+      nota_aluno_correção += 1
+
+    if quantidade == 10 :
+      nota_final.append(nota_aluno_correção)
+      break
+  
+  time.sleep(2)
+  print('Todos os alunos já estão inclusos? ')
+  pergunta_final = str(input('s/n? '))
+  if pergunta_final.lower() == 's':
+    break
+
+
+print()
+print()
+
+
+time.sleep(3)
+if len(nota_final) == 1 :
+  print('Número de Acertos:',max(nota_final))
+  print('Número de Erros:',10-(max(nota_final)))
+  print('Apenas 1 usuário incluio as respostas sendo ele',nome_aluno)
+
+else: 
+  print('Maior nota:',max(nota_final),'\nMenor Acerto:',min(nota_final))
+  print('Numeros de pessoas que usaram o Sistema:',len(nota_final))
+  print('Média das Notas:{:.2f}'.format(nota_aluno_correção/(len(nota_final))))
