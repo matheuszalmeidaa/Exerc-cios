@@ -1,0 +1,30 @@
+import time
+
+valores_produto = []
+
+while True:
+  print('Loja Tabajara')
+  i=0
+  while True:
+    i+=1
+    time.sleep(0.5)
+    valor_incluir = float(input('Produto %d : '%i))
+    valores_produto.append(valor_incluir)
+
+    if valor_incluir == 0 :
+      valores_produto.remove(0)
+      print('Total: R${:.2f}'.format(sum(valores_produto)))
+      troco = float(input('Dinheiro: R$'))
+
+      if sum(valores_produto) > troco:
+        print('Saldo insuficiente para pagamento')
+
+      if sum(valores_produto) <= troco:
+        print('Troco: ${:.2f}'.format(troco-sum(valores_produto)))
+      print('Deseja registrar outra compra?')
+      continuar = input("s/n? ")
+      if continuar.lower() == 'n':
+        break
+      if continuar.lower() == 's':
+        break
+        print()
